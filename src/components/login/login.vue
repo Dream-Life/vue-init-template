@@ -112,13 +112,6 @@
 
               sessionStorage.setItem('accessToken', true)
 
-              let data = response.data.user
-              if (data.isadmin) {
-                this.$router.push({path: '/manager'})
-              } else {
-                this.$router.push({path: '/employer'})
-              }
-
               if (!this.isCrypto) {
                 this.$setCookie('_un', this.username, conf.cookie_time)
                 this.$setCookie('_pd', crypto(this.password), conf.cookie_time)
